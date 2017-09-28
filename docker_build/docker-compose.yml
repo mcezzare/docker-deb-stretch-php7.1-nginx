@@ -7,5 +7,19 @@ services:
     volumes:
      - ../:/var/www/html/
     env_file: ../.env
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql_data/:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8000:8080  
 #to run
 #docker-compose -f docker-compose.yml up
