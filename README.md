@@ -1,4 +1,4 @@
-# Docker image Debian Stretch+NGINX+PHP7.1-FPM
+# Docker image Debian Stretch+NGINX+PHP7.1-FPM+Mysql+Adminer
 
 A docker image to quick deploy php7 applications with nginx based on debian
 
@@ -45,6 +45,18 @@ location / {
         index  index.php ;
     }
 ```
+
+
+Check this urls:
+
+http://localhost:8080/ to see phpinfo
+
+http://localhost:8000/ to see adminer
+Server : db
+Username: root
+Password: example
+
+tcp://127.0.0.1:3306 mysql is running and data folder is at docker_build/mysql_data/
 
 ## Built With
 Sublime text : rulez ;)
